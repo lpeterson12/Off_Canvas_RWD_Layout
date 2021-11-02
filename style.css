@@ -1,0 +1,129 @@
+
+/* Stylesheet */
+
+/* load local font  */
+@font-face {
+  font-family: "Satoshi-Regular";
+  src: url(assets/Satoshi-Regular.woff2), url(assets/Satoshi-Regular.woff);
+}
+
+@font-face {
+  font-family: "Satoshi-Black";
+  src: url(assets/Satoshi-Black.woff2), url(assets/Satoshi-Black.woff);
+}
+
+body {
+	/* base styling */
+	margin: 0;
+  /* apply local font */
+	font-family: "Satoshi-Regular";
+	/* typogrpahy */
+  font-size: 1.25em;
+	line-height: 1.15em;  
+}
+
+article h1 {
+  font-family: "Satoshi-Black";
+}
+
+/* Nav Menu */
+nav {
+  background: lightBlue;
+  width: 100%;
+  
+  /* positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 150px;
+  
+  /*  alignment  */
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+
+/* Nav Links */
+nav a {
+  color: navy;
+  text-decoration: none;
+  margin: 20px;
+}
+
+/* Main : Hide Menu */
+main {
+  position: relative;
+  z-index: 1;
+  background-color: beige;
+  min-height: 100vh;
+  
+  /* x translate matches width of navigation */
+  transform: translate( 0, 0);
+    /* animate with transition */
+  transition: transform .25s;
+}
+
+/* Main Content */
+main.open {
+  transform: translate( 0, 80px);
+}
+
+/* Menu Button */
+a.toggle-nav {
+  display: flex;
+  padding-top: 1em;
+  text-decoration: none;
+  color: black;
+  justify-content: center;
+  margin-right: 20px;
+}
+
+/* Menu Button Icon */
+a.toggle-nav img {
+  vertical-align: center;
+}
+
+
+/* Mobile */
+@media only screen and (min-width: 0) { 
+  main {
+    background: white;
+  }
+  nav {
+    height: 100px;
+  } 
+  main.open {
+    transform: translate( 0, 80px);
+  }
+  
+}
+
+/* Tablet */
+@media only screen and (min-width: 26em)  {
+  main {
+    background: beige;
+  }
+  nav {
+    height: 100px
+  }
+  main.open {
+    transform: translate( 0, 80px);
+  }
+  
+}
+
+/* Desktop */
+
+@media screen and (min-width: 72em)  { 
+  main {
+    background: grey;
+  }
+  nav {
+    width: 100%;
+  }
+  main.open {
+    transform: translate( 0, 80px);
+  }
+
+}
